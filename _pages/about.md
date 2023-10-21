@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral researcher <br /> Astrophysics Division, National Centre for Nuclear Research (NCBJ), Poland
+subtitle: _Postdoctoral researcher_ <br /> _Astrophysics Division, National Centre for Nuclear Research (NCBJ), Poland_
 
 
 profile:
