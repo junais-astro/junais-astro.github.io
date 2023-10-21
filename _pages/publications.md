@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description:[ADS listing](ui.adsabs.harvard.edu/public-libraries/rTaH98YmTs6-aZoxtV7WXg/)
+description:
 nav: true
 nav_order: 1
 ---
