@@ -2,6 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
+name: ADS listing
 url: https://ui.adsabs.harvard.edu/public-libraries/rTaH98YmTs6-aZoxtV7WXg
 description:
 nav: true
