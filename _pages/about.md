@@ -2,7 +2,10 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: >
+<p>Postdoctoral researcher</p>
+<p>Astrophysics Division, National Centre for Nuclear Research (NCBJ), Poland</p>
+
 
 profile:
   align: right
