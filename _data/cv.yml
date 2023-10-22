@@ -7,53 +7,27 @@
       value: 27th April 1995
     - name: Languages
       value: English, Malayalam, Tamil, Hindi
-
-- title: Education
-  type: time_table
-  contents:
-    - title: Ph.D. in Astrophysics and Cosmology
-      institution: Laboratoire d'Astrophysique de Marseille (LAM), France
-      year: 01/10/2018 - 22/09/2021
-      description:
-        - Study of kinematics and the role of environment in the evolution of low surface brightness galaxies using spectroscopic and photometric data.
-        - Supervisor: Samuel Boissier
-    - title: Masters in Astrophysics
-      institution: Aix Marseille University, Marseille, France
-      year: 01/10/2016 - 30/09/2018
-    - title: Bachelors in Physics (with Honours)
-      institution: University of Delhi, Hindu College, New Delhi, India
-      year: 01/06/2013 - 30/06/2016
-
+      
 - title: Experience
   type: time_table
   contents:
     - title: Post-doctoral researcher (Assistant Professor)
       institution: Astrophysics division (BP4) of the National Center for Nuclear Research (NCBJ), Warsaw, Poland
-      year: 01/12/2021 - present
+      year: 12/2021 - now
       description:
         - Constraining dust attenuation in low surface brightness galaxies using multi-wavelength photometric data and spectral energy distribution fitting techniques
-        - Supervisor: Katarzyna Małek
-
-- title: Fellowships and Grants
+        
+- title: Education
   type: time_table
   contents:
-    - year: 2022-2024
-      items: 
-        - PHC Polonium travel grant by the Polish Ministry (NAWA) for Poland‐France collaboration in the study of low surface brightness galaxies. I am the Co-I of this grant (PI- Katarzyna Małek). Grant number- BPN/BFR/2022/1/00005 (5600 euros; 2022-2024)
-    - year: 2021
-      items: 
-        - Co-I of a grant by LAM (France) to buy an Hα narrow-band filter at the redshift of Malin 1 (4000 euros; 2021).
-    - year: 2018-2021
-      items:
-        - Ecole Doctoral (ED352) Ph.D. fellowship by Aix Marseille University, France (61200 euros; 2018-2021)
-    - year: 2016-2018
-      items:
-        - AMIDEX fellowship for Master studies by Aix Marseille University, France (16000 euros; 2016-2018)
-    - year: 2013-2016
-      items:
-        - INSPIRE Scholarship for Bachelor studies by the Department of Science & Technology, India (660 euros; 2013-2016)
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - title: Ph.D. in Astrophysics and Cosmology
+      institution: Laboratoire d'Astrophysique de Marseille (LAM), France
+      year: 10/2018 - 09/2021
+      description:
+        - Star formation and its history in low surface brightness galaxies
+    - title: Masters in Astrophysics
+      institution: Aix Marseille University, Marseille, France
+      year: 10/2016 - 09/2018
+    - title: Bachelors in Physics (with Honours)
+      institution: University of Delhi, Hindu College, New Delhi, India
+      year: 06/2013 - 06/2016
