@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: <a href="https://ui.adsabs.harvard.edu/public-libraries/rTaH98YmTs6-aZoxtV7WXg">ADS library</a>
+description: <a href='https://ui.adsabs.harvard.edu/public-libraries/rTaH98YmTs6-aZoxtV7WXg'>ADS</a>
 nav: true
 nav_order: 1
 ---
