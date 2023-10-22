@@ -38,31 +38,21 @@
       "area": "Astrophysics and Cosmology",
       "studyType": "Ph.D.",
       "startDate": "2018-10-01",
-      "endDate": "2021-09-22",
-      "score": "",
-      "courses": [
-        "Star formation and its history in low surface brightness galaxies",
-        "Study of kinematics and the role of environment in the evolution of low surface brightness galaxies using spectroscopic and photometric data."
-      ]
+      "endDate": "2021-09-22"
     },
     {
       "institution": "Aix Marseille University, Marseille, France",
       "area": "Astrophysics",
       "studyType": "Masters",
       "startDate": "2016-10-01",
-      "endDate": "2018-09-30",
-      "score": "",
-      "courses": [
-        "First spectroscopic study of ionized gas emission lines in the extreme Malin 1 galaxy."
-      ]
+      "endDate": "2018-09-30"
     },
     {
       "institution": "University of Delhi, Hindu College, New Delhi, India",
       "area": "Physics",
       "studyType": "Bachelors (with Honours)",
       "startDate": "2013-06-01",
-      "endDate": "2016-06-30",
-      "score": ""
+      "endDate": "2016-06-30"
     }
   ]
   "awards": [
@@ -78,12 +68,16 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker"
+      "language": "English",
+      "fluency": "Professional working proficiency"
     },
     {
-      "language": "English",
-      "fluency": "Fluent"
+      "language": "Malayalam",
+      "fluency": "Native"
+    }
+    {
+      "language": "Malayalam",
+      "fluency": "Native"
     }
   ],
   "interests": [],
