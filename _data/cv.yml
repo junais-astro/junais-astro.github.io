@@ -3,15 +3,17 @@
   contents:
     - name: Full Name
       value: Junais
-    - name: Date of Birth
-      value: 27th April 1995
-    - name: Languages
-      value: English, Malayalam, Tamil, Hindi
+    - name: Position
+      value: Postdoctoral researcher      
+    - name: Email
+      value: junais@ncbj.gov.pl
+    - name: Phone
+      value: +48 571033083
       
 - title: Experience
   type: time_table
   contents:
-    - title: Post-doctoral researcher (Assistant Professor)
+    - title: Postdoctoral researcher (Assistant Professor)
       institution: Astrophysics division (BP4) of the National Center for Nuclear Research (NCBJ), Warsaw, Poland
       year: 12/2021 - now
       description:
