@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral researcher <br /> NCBJ, Poland
+subtitle: Postdoctoral researcher <br /> <a href='#'>NCBJ</a>, Poland
 
 
 profile:
