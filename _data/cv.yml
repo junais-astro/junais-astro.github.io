@@ -10,7 +10,7 @@
     - name: Phone
       value: +48 571033083
       
-- title: Experience
+- title: Employment
   type: time_table
   contents:
     - title: Postdoctoral researcher (Assistant Professor)
