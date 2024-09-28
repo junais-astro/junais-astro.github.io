@@ -2,7 +2,6 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral researcher <br /> <a href='https://www.iac.edu.es/en/transparency/economic-information/grants/excellence-galaxies-twinning-iac-exgal-twin)'>Instituto de Astrofísica de Canarias (IAC), Tenerife, Spain</a> <br /> <hr>
 
 
 profile:
