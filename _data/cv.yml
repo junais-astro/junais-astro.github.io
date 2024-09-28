@@ -13,9 +13,14 @@
 - title: Employment
   type: time_table
   contents:
+      - title: Postdoctoral researcher
+      institution: Instituto de Astrofísica de Canarias (IAC), Tenerife, Spain
+      year: 10/2024 - now
+      description:
+        - Properties of low surface brightness and dwarf galaxies from deep, wide surveys of Euclid and LSST   
     - title: Postdoctoral researcher (Assistant Professor)
       institution: Astrophysics division (BP4) of the National Center for Nuclear Research (NCBJ), Warsaw, Poland
-      year: 12/2021 - now
+      year: 12/2021 - 08/2024
       description:
         - Constraining dust attenuation in low surface brightness galaxies using spectral energy distribution fitting techniques
         
