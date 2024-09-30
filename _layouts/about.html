@@ -40,11 +40,7 @@ layout: default
           <div class="clearfix">
             {{ content }}
           </div>
-
-          <!-- Footnote -->
-          <ol>
-            <li id="footnote1">Junais is an astrophysicist specializing in UDGs.</li>
-          </ol>
+              
               
           <!-- News -->
           {% if page.news and site.announcements.enabled -%}
@@ -79,4 +75,9 @@ layout: default
           {%- endif %}
         </article>
 
+</div>
+
+<!-- Footnote at the bottom-left corner -->
+<div style="position: fixed; bottom: 0; left: 0; padding: 10px;">
+  <p><sup id="footnote1">*</sup> Fun fact: I only have a single name!</p>
 </div>
