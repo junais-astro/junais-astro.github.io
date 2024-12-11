@@ -6,16 +6,16 @@
     - name: Position
       value: Postdoctoral researcher      
     - name: Email
-      value: junais@ncbj.gov.pl
+      value: junais@iac.es
     - name: Phone
-      value: +48 571033083
+      value: +34 645625013
       
 - title: Employment
   type: time_table
   contents:
     - title: Postdoctoral researcher
       institution: Instituto de Astrofísica de Canarias (IAC), Tenerife, Spain
-      year: 10/2024 - now
+      year: 11/2024 - now
       description:
         - Investigating low surface brightness and dwarf galaxies from the Euclid survey   
     - title: Postdoctoral researcher (Assistant Professor)
