@@ -4,26 +4,34 @@
     - name: Full Name
       value: Junais
     - name: Position
-      value: Postdoctoral researcher      
+      value: Alexander von Humboldt Postdoctoral Fellow
     - name: Email
-      value: junais@iac.es
+      value: junais@aip.de
     - name: Phone
       value: +34 645625013
-      
+
 - title: Employment
   type: time_table
   contents:
+    - title: Alexander von Humboldt Postdoctoral Fellow
+      institution: Leibniz Institute for Astrophysics Potsdam (AIP), Potsdam, Germany
+      year: 05/2026 - now
+      description:
+        - Studying dwarf galaxies using deep imaging and integral-field-unit (IFU) observations
+        - Investigating the structure, stellar populations, kinematics, and environmental evolution of dwarf galaxies
+
     - title: Postdoctoral researcher
       institution: Instituto de Astrofísica de Canarias (IAC), Tenerife, Spain
-      year: 11/2024 - now
+      year: 11/2024 - 04/2026
       description:
-        - Investigating low surface brightness and dwarf galaxies from the Euclid survey   
+        - Investigated low surface brightness and dwarf galaxies from the Euclid survey
+
     - title: Postdoctoral researcher (Assistant Professor)
       institution: National Center for Nuclear Research (NCBJ), Astrophysics division (BP4), Warsaw, Poland
       year: 2021 - 2024
       description:
-        - Constraining dust attenuation in low surface brightness galaxies using SED modeling and IFU observations
-        
+        - Constrained dust attenuation in low surface brightness galaxies using SED modeling and IFU observations
+
 - title: Education
   type: time_table
   contents:
