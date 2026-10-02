@@ -1,0 +1,22 @@
+# Extra fields for papers.bib
+# ---------------------------------------------------------------------------
+# papers.bib is regenerated automatically from the ADS library, so never edit
+# it by hand. Put per-paper tweaks here instead, keyed by ADS bibcode.
+#
+# Useful al-folio fields:
+#   selected: true        -> show on the "selected publications" list
+#   abbr: A&A             -> small badge next to the paper
+#   pdf: https://...      -> PDF button (URL, or a file name in assets/pdf/)
+#   code: https://...     -> Code button
+#   preview: image.png    -> thumbnail from assets/img/publication_preview/
+#   bibtex_show: true     -> "Bib" button
+#   hide: true            -> leave this paper off the website
+#
+# Example (remove the leading "# " to activate):
+#
+# "2026A&A...707A.229E":
+#   selected: true
+#   abbr: A&A
+#
+# "2025arXiv251214664K":
+#   hide: true

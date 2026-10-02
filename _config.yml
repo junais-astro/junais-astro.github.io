@@ -203,6 +203,8 @@ kramdown:
 include: ['_pages']
 exclude:
   - bin
+  - publish.sh
+  - HOW_TO_EDIT.md
   - Gemfile
   - Gemfile.lock
   - vendor
