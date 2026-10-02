@@ -42,14 +42,35 @@
           {% assign author_array_limit = site.max_author_limit %}
         {% endif %}
 
-        {%- for author in entry.author_array limit: author_array_limit -%}
-          {%- assign author_is_self = false -%}
+        {%- comment -%} Find my position in the author list (site.scholar last/first names) {%- endcomment -%}
+        {%- assign self_index = -1 -%}
+        {%- for author in entry.author_array -%}
           {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
           {%- if site.scholar.last_name contains author_last_name -%}
-            {%- if author.first == blank or site.scholar.first_name contains author.first -%}
-              {%- assign author_is_self = true -%}
+            {%- if author.first == nil or author.first == blank or site.scholar.first_name contains author.first -%}
+              {%- assign self_index = forloop.index0 -%}
+              {%- break -%}
             {%- endif -%}
           {%- endif -%}
+        {%- endfor -%}
+
+        {%- comment -%}
+          If I am hidden behind "N more authors": show everyone up to me when I am
+          among the first 10, otherwise show "first authors, ..., me".
+        {%- endcomment -%}
+        {%- assign self_gap = false -%}
+        {%- assign last_visible = author_array_limit | minus: 1 -%}
+        {%- if self_index > last_visible -%}
+          {%- if self_index < 10 -%}
+            {%- assign author_array_limit = self_index | plus: 1 -%}
+          {%- else -%}
+            {%- assign self_gap = true -%}
+          {%- endif -%}
+        {%- endif -%}
+
+        {%- for author in entry.author_array limit: author_array_limit -%}
+          {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
+          {%- if author.first == author.last -%}{%- assign author_name = author.last -%}{%- else -%}{%- assign author_name = author.first | append: " " | append: author.last | strip -%}{%- endif -%}
           {%- assign coauthor_url = nil -%}
           {%- if site.data.coauthors[author_last_name] -%}
             {%- for coauthor in site.data.coauthors[author_last_name] -%}
@@ -64,30 +85,37 @@
             {%- if forloop.first == false -%},&nbsp;{%- endif -%}
             {%- if forloop.last and author_array_limit == author_array_size -%}and&nbsp;{%- endif -%}
           {%- endif -%}
-          {%- if author_is_self -%}
-            <strong>{{author.first}} {{author.last}}</strong>
+          {%- if forloop.index0 == self_index -%}
+            <strong>{{author_name}}</strong>
+          {%- elsif coauthor_url -%}
+            <a href="{{coauthor_url}}">{{author_name}}</a>
           {%- else -%}
-            {%- if coauthor_url -%}
-              <a href="{{coauthor_url}}">{{author.first}} {{author.last}}</a>
-            {%- else -%}
-              {{author.first}} {{author.last}}
-            {%- endif -%}
+            {{author_name}}
           {%- endif -%}
         {%- endfor -%}
-        {%- assign more_authors = author_array_size | minus: author_array_limit -%}
+
+        {%- if self_gap -%}
+          {%- assign me = entry.author_array[self_index] -%}
+          {%- if me.first == me.last -%}{%- assign me_name = me.last -%}{%- else -%}{%- assign me_name = me.first | append: " " | append: me.last | strip -%}{%- endif -%}
+          ,&nbsp;…,&nbsp;<strong>{{me_name}}</strong>
+        {%- endif -%}
+
+        {%- assign self_offset = self_index | minus: author_array_limit -%}
+        {%- assign more_authors = 0 -%}
+        {%- assign more_authors_show = '' -%}
+        {%- for author in entry.author_array offset: author_array_limit -%}
+          {%- if self_gap and forloop.index0 == self_offset -%}{%- continue -%}{%- endif -%}
+          {%- if author.first == author.last -%}{%- assign author_name = author.last -%}{%- else -%}{%- assign author_name = author.first | append: " " | append: author.last | strip -%}{%- endif -%}
+          {%- if more_authors > 0 -%}{%- assign more_authors_show = more_authors_show | append: ", " -%}{%- endif -%}
+          {%- assign more_authors_show = more_authors_show | append: author_name -%}
+          {%- assign more_authors = more_authors | plus: 1 -%}
+        {%- endfor -%}
 
         {%- assign more_authors_hide = more_authors | append: " more author" -%}
         {%- if more_authors > 0 -%}
           {%- if more_authors > 1 -%}
             {%- assign more_authors_hide = more_authors_hide | append: "s" -%}
           {%- endif -%}
-          {%- assign more_authors_show = '' -%}
-          {%- for author in entry.author_array offset: author_array_limit -%}
-            {%- assign more_authors_show = more_authors_show | append: author.first | append: " " | append: author.last -%}
-            {%- unless forloop.last -%}
-              {%- assign more_authors_show = more_authors_show | append: ", " -%}
-            {%- endunless -%}
-          {%- endfor -%}
           , and
           <span
               class="more-authors"
@@ -95,7 +123,7 @@
               onclick="
                 var element = $(this);
                 element.attr('title', '');
-                var more_authors_text = element.text() == '{{more_authors_hide}}' ? '{{more_authors_show}}' : '{{more_authors_hide}}';
+                var more_authors_text = element.text() == '{{more_authors_hide}}' ? '{{more_authors_show | replace: "'", "\'"}}' : '{{more_authors_hide}}';
                 var cursorPosition = 0;
                 var textAdder = setInterval(function(){
                   element.text(more_authors_text.substring(0, cursorPosition + 1));
