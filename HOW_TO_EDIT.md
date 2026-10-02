@@ -1,48 +1,45 @@
-# Editing this website locally
+# Editing this website
 
-## Everyday workflow
+## The two things you need
 
-1. Edit files here in any editor (VS Code, etc.).
-2. In a terminal, from this folder: `./publish.sh "what I changed"`
-3. GitHub rebuilds the site in a few minutes (progress: the repo's **Actions** tab).
+1. **`website.yml`** — the one file to edit: name, home-page text, address, news, CV,
+   profile links, which pages show in the menu. Open it in any text editor.
+2. **`Publish website.command`** — double-click it in Finder to put your changes online.
+   (Terminal alternative: `bash publish.sh "what I changed"`.)
 
-`publish.sh` first pulls anything GitHub committed (e.g. new papers), then commits and pushes your edits.
+The site updates a few minutes later at https://junais-astro.github.io
 
-## Where things live
+Publishing copies `website.yml` into the theme's files (`_config.yml`, `_pages/about.md`,
+`_news/`, `_data/cv.yml`, ...), so don't edit those by hand — your edits would be overwritten.
 
-| What | File |
-|---|---|
-| About / home page text | `_pages/about.md` |
-| CV | `_data/cv.yml` |
-| News items | `_news/` (one file per item) |
-| Projects | `_projects/` |
-| Site settings (name, email, ORCID, ...) | `_config.yml` |
-| Profile picture & images | `assets/img/` |
-| Publications | **automatic** — don't edit `_bibliography/papers.bib` |
+## Publications — fully automatic
 
-## Publications (automatic from ADS)
-
-The list comes from the ADS public library
+They come from the ADS library
 https://ui.adsabs.harvard.edu/public-libraries/rTaH98YmTs6-aZoxtV7WXg
 
-- A GitHub Action (`.github/workflows/update-publications.yml`) checks the library **every day**
-  and, if anything changed, rewrites `papers.bib` and rebuilds the site.
-- To add or remove a paper: just add/remove it in the ADS library.
-- To update immediately: GitHub → **Actions** → *update-publications* → **Run workflow**.
-- Per-paper tweaks (selected, abbr badge, PDF link, hide a paper, ...): `_bibliography/extra_fields.yml`.
+- Add/remove a paper in ADS → the site updates the next morning (05:17 UTC).
+- Update right now: GitHub repo → **Actions** → *update-publications* → **Run workflow**.
+- Per-paper tweaks (selected, journal badge, PDF link, hide a paper): `_bibliography/extra_fields.yml`.
+- Your name (as set in `name_in_papers` in `website.yml`) is printed in bold.
 
-### One-time setup (ADS token)
+## Other files you may touch
 
-1. Get a free token: https://ui.adsabs.harvard.edu/user/settings/token
-2. GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**
-   - Name: `ADS_TOKEN`
-   - Value: the token
-3. Optional, to run it locally too: `mkdir -p ~/.ads && echo YOUR_TOKEN > ~/.ads/dev_key`,
-   then `python3 bin/update_publications.py` (or `./publish.sh --pubs`).
+| What | Where |
+|---|---|
+| Profile photo / images | `assets/img/` (photo file name is set in `website.yml`) |
+| CV PDF | `assets/pdf/` (file name set in `website.yml`) |
+| Anything else (theme, layout) | `_config.yml`, `_layouts/`, `_sass/` — rarely needed |
 
-Note: GitHub pauses scheduled workflows after 60 days without any repository activity.
-If that happens, clicking **Run workflow** (or any push) re-enables it.
+## If something goes wrong
+
+- *"website.yml has a formatting problem near line N"*: usually indentation (use spaces,
+  keep items lined up) or a value containing `: ` that needs "quotes". Fix and publish again.
+- *"PyYAML is missing"*: run `conda install pyyaml` once.
+- The ADS token is stored as the GitHub secret `ADS_TOKEN` (repo Settings → Secrets and
+  variables → Actions). If you regenerate it on ADS, update it there.
+- GitHub pauses the daily job after 60 days without repository activity; clicking
+  **Run workflow** (or publishing anything) re-enables it.
 
 ## Optional: preview before publishing
 
-With Docker Desktop installed: `docker compose up`, then open http://localhost:8080 (Ctrl+C to stop).
+With Docker Desktop installed: `docker compose up` in this folder, then open http://localhost:8080.
